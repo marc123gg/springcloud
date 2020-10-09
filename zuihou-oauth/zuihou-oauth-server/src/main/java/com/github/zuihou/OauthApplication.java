@@ -19,11 +19,13 @@ import java.net.UnknownHostException;
  * @createTime 2020年03月23日16:24:37
  */
 @SpringBootApplication
-@EnableDiscoveryClient
+@EnableDiscoveryClient    //开启服务注册发现功能
 @EnableFeignClients(value = {
         "com.github.zuihou",
 })
-@Slf4j
+@Slf4j         //省去了每次都写
+                // private  final Logger logger = LoggerFactory.getLogger(当前类名.class);的麻烦
+                // 在类上加上此注解可在方法中直接使用log关键词，前提需要Lombok插件
 @EnableLoginArgResolver
 public class OauthApplication {
     public static void main(String[] args) throws UnknownHostException {

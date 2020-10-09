@@ -20,7 +20,7 @@ public class FileWebConfiguration extends BaseConfig {
      * @return
      */
     @Bean
-    @ConditionalOnExpression("${zuihou.log.enabled:true} && 'DB'.equals('${zuihou.log.type:LOGGER}')")
+    @ConditionalOnExpression("${zuihou.log.enabled:true} && 'DB'.equals('${zuihou.log.type:LOGGER}')")     //当注解内容值为true时才会实例化
     public SysLogListener sysLogListener(LogApi logApi) {
         return new SysLogListener((log) -> logApi.save(log));
     }

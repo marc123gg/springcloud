@@ -22,6 +22,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.PostConstruct;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -48,6 +49,11 @@ import static com.github.zuihou.utils.DateUtils.DEFAULT_MONTH_FORMAT_SLASH;
 @ConditionalOnProperty(prefix = FileServerProperties.PREFIX, name = "type", havingValue = "LOCAL", matchIfMissing = true)
 @Slf4j
 public class LocalAutoConfigure {
+
+    @PostConstruct
+    public void init(){
+        System.out.println("i am local---------------------------------------------------");
+    }
 
     @Service
     public class LocalServiceImpl extends AbstractFileStrategy {

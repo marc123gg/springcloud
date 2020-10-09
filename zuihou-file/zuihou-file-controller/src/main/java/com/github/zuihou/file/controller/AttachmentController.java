@@ -110,7 +110,7 @@ public class AttachmentController extends SuperSimpleController<AttachmentServic
             return R.fail(BASE_VALID_PARAM.build("请求中必须至少包含一个有效文件"));
         }
         String tenant = BaseContextHandler.getTenant();
-
+        System.out.println(tenant);
         AttachmentDTO attachment = baseService.upload(file, tenant, id, bizType, bizId, isSingle);
 
         return R.success(attachment);

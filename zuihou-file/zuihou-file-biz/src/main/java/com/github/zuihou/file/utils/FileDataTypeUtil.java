@@ -29,7 +29,7 @@ public class FileDataTypeUtil {
      * 根据mine类型，返回文件类型
      *
      * @param
-     * @return
+     * @returnd
      * @author zuihou
      * @date 2019-05-06 13:41
      */

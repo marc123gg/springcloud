@@ -70,9 +70,9 @@ public class FileServiceImpl extends SuperServiceImpl<FileMapper, File> implemen
     @Override
     public File upload(MultipartFile simpleFile, Long folderId) {
         FileAttrDO fileAttrDO = this.getFileAttrDo(folderId);
-        String treePath = fileAttrDO.getTreePath();
-        String folderName = fileAttrDO.getFolderName();
-        Integer grade = fileAttrDO.getGrade();
+        String treePath = fileAttrDO.getTreePath();                 //父目录层级关系
+        String folderName = fileAttrDO.getFolderName();             //父文件夹名
+        Integer grade = fileAttrDO.getGrade();                      //父目录层数
 
         File file = fileStrategy.upload(simpleFile);
         file.setFolderId(folderId);

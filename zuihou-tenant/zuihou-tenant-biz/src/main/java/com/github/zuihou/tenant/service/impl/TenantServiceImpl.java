@@ -69,6 +69,7 @@ public class TenantServiceImpl extends SuperCacheServiceImpl<TenantMapper, Tenan
 
         // 优化后
         String key = buildKey(tenant);
+        //String为传入参数类型，Object为返回类型
         Function<String, Object> loader = (k) -> getObj(Wraps.<Tenant>lbQ().select(Tenant::getId).eq(Tenant::getCode, tenant), Convert::toLong);
         return getByKey(TENANT_NAME, key, loader);
     }

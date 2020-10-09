@@ -34,6 +34,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.PostConstruct;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -56,6 +57,11 @@ import static com.github.zuihou.utils.DateUtils.DEFAULT_MONTH_FORMAT_SLASH;
 @Slf4j
 @ConditionalOnProperty(prefix = FileServerProperties.PREFIX, name = "type", havingValue = "ALI")
 public class AliOssAutoConfigure {
+
+    @PostConstruct
+    public void init(){
+        System.out.println("i am ali---------------------------------------------------");
+    }
 
     @Service
     public class AliServiceImpl extends AbstractFileStrategy {

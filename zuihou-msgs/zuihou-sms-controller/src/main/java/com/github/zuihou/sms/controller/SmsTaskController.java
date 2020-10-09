@@ -44,7 +44,7 @@ import java.util.List;
 @RequestMapping("/smsTask")
 @Api(value = "SmsTask", tags = "发送任务")
 @PreAuth(replace = "sms:manage:")
-public class SmsTaskController extends SuperController<SmsTaskService, Long, SmsTask, SmsTaskPageDTO, SmsTaskSaveDTO, SmsTaskUpdateDTO> {
+public class    SmsTaskController extends SuperController<SmsTaskService, Long, SmsTask, SmsTaskPageDTO, SmsTaskSaveDTO, SmsTaskUpdateDTO> {
 
     @Autowired
     private SmsSendStatusService smsSendStatusService;
